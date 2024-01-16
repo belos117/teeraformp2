@@ -1,9 +1,9 @@
 resource "aws_instance" "myliveserver" {
-  ami           = "ami-0905a3c97561e0b69"
+  ami           = var.ami_id
   instance_type = "t2.micro"
 
   tags = {
-    Name = "dev"
+    Name = var.environment
   }
 }
 
