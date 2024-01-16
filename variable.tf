@@ -1,4 +1,4 @@
-variable "name" {
+variable "allow_tls" {
   description = "allow tls" 
   type = string
   default = "MyServer" 
