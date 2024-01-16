@@ -10,31 +10,6 @@ resource "aws_instance" "myliveserver" {
 resource "aws_security_group" "allow_tls" {
   name        = var.name
   description = "Allow TLS inbound traffic"
- 
-  var.https_ingress {
-    description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = ["116.30.20.50/32"]
- 
-  }
-
-  var.http_ingress {
-   description      = "TLS from VPC"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["116.30.20.50/32"]
- }
-
-   ingress {
-    description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-   cidr_blocks      = ["116.30.20.50/32"]
-  }
 
   tags = {
     Name = “manual”
