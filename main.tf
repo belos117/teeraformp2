@@ -10,6 +10,7 @@ resource "aws_instance" "myliveserver" {
 resource "aws_security_group" "allow_tls" {
   name        = var.name
   description = "Allow TLS inbound traffic"
+  dynamic ingress = var.ingress
 
   tags = {
     Name = “manual”
