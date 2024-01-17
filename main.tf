@@ -9,7 +9,7 @@ resource "aws_instance" "myliveserver" {
 
 
 resource "aws_security_group" "allow_tls" {
-  name        = var.security_group
+  name        = var.security_group_name
 
   dynamic "ingress" {
     for_each = var.ingress_rule
