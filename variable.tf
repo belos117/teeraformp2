@@ -11,13 +11,13 @@ variable "environment" {
 }
 
 variable "security_group_name" {
-  description = "Security group name"
+  description = "Allow TLS inbound traffic"
   type        = string 
-  default     = "security_group" 
+  default     = "allow_tls" 
 }
 
 variable "ingress_rule" {
-    description      = "ingress rules"
+    description      = "TLS from VPC"
     type             = list(any)
     default = [
       {
@@ -34,3 +34,9 @@ variable "ingress_rule" {
       }
     ] 
  } 
+
+variable "security_group_tag" {
+  description = "Security Group Tag" 
+  type        = string 
+  default     = "manual" 
+} 
