@@ -1,9 +1,3 @@
-variable "allow_tls" {
-  description = "allow tls" 
-  type = string
-  default = "allow_tls" 
-} 
-
 variable "ami_id" {
   description = "EC2 Instance AMI ID"
   type        = string
