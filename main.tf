@@ -7,12 +7,22 @@ resource "aws_instance" "myliveserver" {
   }
 }
 
-resource "aws_security_group" "allow_tls" {
-  name        = var.name
-  description = "Allow TLS inbound traffic"
-  dynamic ingress = var.ingress
 
-  tags = {
+resource "aws_security_group" "secu" {
+  name        = var.security_group
+
+  dynamic "ingress" {
+    for_each = var.ingress_rules
+
+    content {
+      from_port   = ingress.value.from_port
+      to_port     = ingress.value.to_port
+      protocol    = ingress.value.protocol
+      cidr_blocks = ingress.value.cidr_blocks
+    }
+  }
+
+tags = {
     Name = “manual”
   } 
 }
