@@ -22,7 +22,7 @@ variable "security_group_name" {
   default     = "security_group" 
 }
 
-variable = "ingress_rule" {
+variable "ingress_rule" {
     description      = "ingress rules"
     type             = list(any)
     default = [
