@@ -8,7 +8,7 @@ resource "aws_instance" "myliveserver" {
 }
 
 
-resource "aws_security_group" "secu" {
+resource "aws_security_group" "allow_tls" {
   name        = var.security_group
 
   dynamic "ingress" {
