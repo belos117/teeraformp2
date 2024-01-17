@@ -20,7 +20,7 @@ variable "security_group_name" {
   description = "Security group name"
   type        = string 
   default     = "security_group" 
-} 
+}
 
 variable = "ingress_rule" {
     description      = "ingress rules"
