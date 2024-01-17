@@ -12,7 +12,7 @@ resource "aws_security_group" "allow_tls" {
   name        = var.security_group
 
   dynamic "ingress" {
-    for_each = var.ingress_rules
+    for_each = var.ingress_rule
 
     content {
       from_port   = ingress.value.from_port
@@ -23,6 +23,6 @@ resource "aws_security_group" "allow_tls" {
   }
 
 tags = {
-    Name = “manual”
+    Name = var.security_group_tag
   } 
 }
