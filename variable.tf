@@ -1,7 +1,7 @@
 variable "allow_tls" {
   description = "allow tls" 
   type = string
-  default = "MyServer" 
+  default = "allow_tls" 
 } 
 
 variable "ami_id" {
@@ -11,12 +11,18 @@ variable "ami_id" {
 }
 
 variable "environment" {
-  description = "Environment name"
+  description = "Environment tag"
   type        = string
   default     = "dev" 
 }
 
-variable = "ingress" {
+variable "security_group_name" {
+  description = "Security group name"
+  type        = string 
+  default     = "security_group" 
+} 
+
+variable = "ingress_rule" {
     description      = "ingress rules"
     type             = list(any)
     default = [
